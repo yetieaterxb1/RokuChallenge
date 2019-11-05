@@ -16,8 +16,8 @@
       itemSize="[400,48]"
     >
     <ContentNode id = "categories" role = "content" >
-      <ContentNode title = "Screen A"/>
-      <ContentNode title = "Screen B"/>
+      <data_node title = "Screen A" feed_url="https://api.jsonbin.io/b/5b291f24e9276029e68f0892/4"/>
+      <data_node title = "Screen B" feed_url="https://api.jsonbin.io/b/5b291f24e9276029e68f0892/4"/>
     </ContentNode>
     </RadioButtonList>
   </children>
