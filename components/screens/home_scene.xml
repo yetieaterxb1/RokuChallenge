@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <component name="first_scene" extends="Scene">
-  <script type="text/brightscript" uri="pkg:/components/first_scene.brs" />
+  <script type="text/brightscript" uri="pkg:/components/screens/home_scene.brs" />
 <children>
     <Rectangle
       translation="[950, 530]"
