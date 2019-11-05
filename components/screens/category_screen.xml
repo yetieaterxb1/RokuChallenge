@@ -16,9 +16,8 @@
       itemSize="[400,48]"
     >
     <ContentNode id = "categories" role = "content" >
-      <ContentNode title = "DRAMA"/>
-      <ContentNode title = "COMEDY"/>
-      <ContentNode title = "HORROR"/>
+      <ContentNode title = "Screen A"/>
+      <ContentNode title = "Screen B"/>
     </ContentNode>
     </RadioButtonList>
   </children>
