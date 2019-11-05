@@ -1,4 +1,7 @@
 sub main()
+    screen = createObject("roSGScreen")
+	  scene = screen.createScene("home_scene")
+	  screen.Show()
     ' Print information from Roku manifest
     app_info = createObject("roAppInfo")
     ? "App Title: ", app_info.getTitle()
