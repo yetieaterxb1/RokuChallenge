@@ -13,21 +13,21 @@ function request()
   http.InitClientCertificates()
   http.AddHeader("secret-key","$2a$10$svzjkniKBQUmA2ys6NILe.TR3z98VydOwoDe0X3dREcjoci90YGP6")
   http.setUrl(url)
-  if http.AsyncGetToString() Then
-    msg = wait(10000, port)
-    if (type(msg) = "roUrlEvent")
+  if http.AsyncGetToString() then
+    msg = wait(0, port)
+    if (type(msg) = "roUrlEvent") then
       'HTTP response code can be <0 for Roku-defined errors
-      if (msg.getresponsecode() > 0 and  msg.getresponsecode() < 400)
-        m.top.response = msg.getstring()
+      if (msg.GetResponseCode() > 0 and  msg.GetResponseCode() < 400) then
+        m.top.response = msg.GetString()
       else
-        ? "feed load failed: "; msg.getfailurereason();" "; msg.getresponsecode();" "; m.top.url
-        m.top.response = ""
+        ? "ERROR -- \n\tin function request(...) --- \n\t\tRequest failed with satus";  msg.GetResponseCode(); "\n\t\tCheck URL and authentication in the request header."
+				m.top.response = "{'error': '"; msg.GetResponseCode(); "'}"
       end if
-      http.asynccancel()
-    else if (msg = invalid)
+      http.AsyncCancel()
+    else
       ? "feed load failed."
       m.top.response =""
-      http.asynccancel()
+      http.AsyncCancel()
     end if
   end if
 end function
