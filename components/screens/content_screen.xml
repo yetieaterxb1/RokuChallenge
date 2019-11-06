@@ -16,13 +16,14 @@
         text=""/>
       <Poster
         id="content_poster"
-        translation="[100,175]"
+        width="0.0"
+        height="0.0"
         />
-      <Label
+      <!-- <Label
         translation="[75, 75]"
         id="footer"
         color="0xFFFFFF"
         font="font:LargeBoldSystemFont"
-        text=""/>
+        text=""/> -->
   </children>
 </component>

@@ -1,17 +1,14 @@
 sub main()
-  m.port = createObject("roMessagePort")
-	screen = createObject("roSGScreen")
-	screen.setMessagePort(m.port)
-	scene = screen.createScene("home_scene")
-	screen.Show()
+  screen = createObject("roSGScreen")
+  scene = screen.createScene("home_scene")
+  screen.Show()
+  port = createObject("roMessagePort")
+  screen.setMessagePort(m.port)
   ' this loop is necessary to keep the application open
   ' otherwise the channel will exit when it reaches the end of main()
   while(true)
-		msg = wait(0, m.port)
-		msgType = type(msg)
-		if msgType = "roSGScreenEvent"
-			if msg.isScreenClosed() then return
-		end if
+    ' nothing happens in here, yet
+    ' the HOME and BACK buttons on the remote will nuke the app
   end while
   ' Print information from Roku manifest
   app_info = createObject("roAppInfo")

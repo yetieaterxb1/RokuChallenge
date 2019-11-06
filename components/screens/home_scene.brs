@@ -30,11 +30,9 @@ sub onFeedResponse(obj)
 	if data <> Invalid and data.screens <> invalid
 		if m.category_screen.category_selected = 0 then
 			m.content_screen.feed_data = data.screens.a
-			?"Hellooooooooooo"
 		end if
 		if m.category_screen.category_selected = 1 then
 			m.content_screen.feed_data = data.screens.b
-			?"Hellloooo"
 		end if
 		m.category_screen.visible = false
 		m.content_screen.visible = true
