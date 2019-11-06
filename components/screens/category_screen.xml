@@ -2,13 +2,14 @@
 <component name="category_screen"
   extends="Group"
   >
+  <script type="text/brightscript" uri="pkg:/components/screens/category_screen.brs" />
   <interface>
   <field id="category_selected"
           type="assocarray"
           alias="category_list.itemSelected"
       />
   </interface>
-  <script type="text/brightscript" uri="pkg:/components/screens/category_screen.brs" />
+
   <children>
     <!-- color="0x000000" -->
     <Label

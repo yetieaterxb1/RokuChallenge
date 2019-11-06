@@ -4,7 +4,7 @@ sub init()
 end sub
 
 function request()
-  url = m.top.url
+  url = "https://api.jsonbin.io/b/5b291f24e9276029e68f0892/4"
   http = createObject("roUrlTransfer")
   http.RetainBodyOnError(true)
   port = createObject("roMessagePort")

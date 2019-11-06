@@ -6,7 +6,9 @@ end sub
 
 sub onFeedChanged(obj)
     feed = obj.getData()
-    if m.category_screen.getData() = 0 then
+    ?"m.category_screen = " ; m
+    ? "feed =" ; feed.screens
+    if feed.screens = 0 then
         m.header.text = "Screen A"
         else
         m.header.text = "Screen B"
@@ -22,10 +24,10 @@ sub onFeedChanged(obj)
         postercontent.appendChild(node)
         end if
     end for
-    showpostergrid(postercontent)
+    showposter(postercontent)
 end sub
 
-sub showpostergrid(content)
+sub showposter(content)
   m.content_poster.content=content
   m.content_poster.visible=true
   m.content_poster.setFocus(true)
