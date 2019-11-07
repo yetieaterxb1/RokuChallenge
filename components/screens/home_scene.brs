@@ -24,22 +24,58 @@ sub loadFeed(url)
   m.feed_task.control = "RUN"
 end sub
 
+function evenArray(array) as Object
+	topFive = []
+	for each number in array
+		if number mod 2 = 0 and topFive.Count() < 5 then
+			topFive.push(number)
+			end if
+	end for
+	return topFive
+end function
+
+function firstFiveArray(array) as Object
+	firstFive = []
+	newArray = array
+	newArray.Sort("r")
+	for each number in newArray
+		if firstFive.Count() = 5 then
+			return firstFive
+		else
+			firstFive.push(number)
+		end if
+		end for
+end function
+
+Function tostr(any)
+    ret = AnyToString(any)
+    if ret = invalid ret = type(any)
+    if ret = invalid ret = "unknown" 'failsafe
+    return ret
+End Function
+
 sub onFeedResponse(obj)
 	response = obj.getData()
 	data = parseJSON(response)
+	data_sort = data.data
+	data_sort.Sort("r")
 	if data <> Invalid and data.screens <> invalid
 		if m.category_screen.category_selected = 0 then
+			a_data = tostr(firstFiveArray(data_sort))
 			m.content_screen.feed_data = {
 				screen: data.screens.a,
-				data: data.data
+				data: a_data
 				}
 		end if
 		if m.category_screen.category_selected = 1 then
-			m.content_screen.feed_data = data.screens.b
+			b_data = evenArray(data_sort)
+			m.content_screen.feed_data = {
+				screen: data.screens.b,
+				data: b_data
+				}
 		end if
 		m.category_screen.visible = false
 		m.content_screen.visible = true
-		' m.content_screen.feed_data = data.screens.a
 	else
 		? "FEED RESPONSE IS EMPTY!"
 	end if
