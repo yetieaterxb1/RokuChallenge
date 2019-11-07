@@ -5,9 +5,9 @@ end sub
 
 sub onFeedChanged(obj)
     feed = obj.getData()
-    ? "feed =" ; feed
-    ?"feed title = "; feed.title
-    m.header.text = feed.title
+    ? "feed =" ; feed.data
+    ?"feed title = "; feed.screen.title
+    m.header.text = feed.screen.title
     ' postercontent = createObject("roSGNode","ContentNode")
     '   node = createObject("roSGNode","ContentNode")
     '     node.SHORTDESCRIPTIONLINE1 = "test"

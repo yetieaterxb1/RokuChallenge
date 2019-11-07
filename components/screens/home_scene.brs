@@ -29,7 +29,10 @@ sub onFeedResponse(obj)
 	data = parseJSON(response)
 	if data <> Invalid and data.screens <> invalid
 		if m.category_screen.category_selected = 0 then
-			m.content_screen.feed_data = data.screens.a
+			m.content_screen.feed_data = {
+				screen: data.screens.a,
+				data: data.data
+				}
 		end if
 		if m.category_screen.category_selected = 1 then
 			m.content_screen.feed_data = data.screens.b
