@@ -36,7 +36,7 @@ sub onFeedResponse(obj)
 		end if
 		m.category_screen.visible = false
 		m.content_screen.visible = true
-		m.content_screen.feed_data = data
+		' m.content_screen.feed_data = data.screens.a
 	else
 		? "FEED RESPONSE IS EMPTY!"
 	end if
