@@ -61,7 +61,7 @@ sub onFeedResponse(obj)
 	data_sort.Sort("r")
 	if data <> Invalid and data.screens <> invalid
 		if m.category_screen.category_selected = 0 then
-			a_data = tostr(firstFiveArray(data_sort))
+			a_data = firstFiveArray(data_sort)
 			m.content_screen.feed_data = {
 				screen: data.screens.a,
 				data: a_data
@@ -80,3 +80,5 @@ sub onFeedResponse(obj)
 		? "FEED RESPONSE IS EMPTY!"
 	end if
 end sub
+
+

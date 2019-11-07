@@ -5,19 +5,18 @@ end sub
 
 sub onFeedChanged(obj)
     feed = obj.getData()
-    ?"feed" ; feed.data
     m.header.text = feed.screen.title
-    m.footer.text = feed.data.tostr()
+
+' Attempted poster grid using JSON url data
+
     ' postercontent = createObject("roSGNode","ContentNode")
-    '   node = createObject("roSGNode","ContentNode")
-    '     node.SHORTDESCRIPTIONLINE1 = "test"
-    '     postercontent.appendChild(node)
-    ' showposter(postercontent)
+	  '   postercontent.url = feed.screen.logo
+    ' showpostergrid(postercontent)
 end sub
 
-' sub showposter(content)
-'   ?"poster content = ";content
-'   m.content_poster.content=content
-'   m.content_poster.visible=true
-'   m.content_poster.setFocus(true)
+' Function show poster grid
+' sub showpostergrid(content)
+'   m.content_grid.content=content
+'   m.content_grid.visible=true
+'   m.content_grid.setFocus(true)
 ' end sub
