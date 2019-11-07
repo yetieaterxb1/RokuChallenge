@@ -7,8 +7,7 @@ sub main()
   ' this loop is necessary to keep the application open
   ' otherwise the channel will exit when it reaches the end of main()
   while(true)
-    ' nothing happens in here, yet
-    ' the HOME and BACK buttons on the remote will nuke the app
+
   end while
   ' Print information from Roku manifest
   app_info = createObject("roAppInfo")

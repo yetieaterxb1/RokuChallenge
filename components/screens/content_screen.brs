@@ -1,6 +1,6 @@
 sub init()
-    m.content_poster = m.top.FindNode("content_poster")
-    m.header = m.top.FindNode("header")
+  m.content_poster = m.top.FindNode("content_poster")
+  m.header = m.top.FindNode("header")
 end sub
 
 sub onFeedChanged(obj)

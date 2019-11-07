@@ -3,6 +3,7 @@ sub init()
   m.top.response = ""
 end sub
 
+' Request task to retreive the JSON data from server
 function request()
   url = m.top.url
   http = createObject("roUrlTransfer")

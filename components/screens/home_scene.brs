@@ -24,6 +24,7 @@ sub loadFeed(url)
   m.feed_task.control = "RUN"
 end sub
 
+' Takes in array and finds the top 5 even numbers
 function evenArray(array) as Object
 	topFive = []
 	for each number in array
@@ -34,6 +35,7 @@ function evenArray(array) as Object
 	return topFive
 end function
 
+' Reverses array to find bottom 5 numbers
 function firstFiveArray(array) as Object
 	firstFive = []
 	newArray = array
@@ -47,6 +49,7 @@ function firstFiveArray(array) as Object
 		end for
 end function
 
+' Function found in Roku docs to turn array to string, couldnt implement
 Function tostr(any)
     ret = AnyToString(any)
     if ret = invalid ret = type(any)
@@ -54,6 +57,7 @@ Function tostr(any)
     return ret
 End Function
 
+' Feed response function using other functions to capture correct JSON data per page
 sub onFeedResponse(obj)
 	response = obj.getData()
 	data = parseJSON(response)
@@ -80,5 +84,3 @@ sub onFeedResponse(obj)
 		? "FEED RESPONSE IS EMPTY!"
 	end if
 end sub
-
-
